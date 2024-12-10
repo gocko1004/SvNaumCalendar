@@ -1,0 +1,33 @@
+import React from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { CalendarScreen } from './screens/CalendarScreen';
+import { EventFormScreen } from './screens/EventFormScreen';
+import { NotificationSettingsScreen } from './screens/NotificationSettingsScreen';
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <PaperProvider>
+      <NavigationContainer>
+        <SafeAreaView style={styles.container}>
+          <Tab.Navigator>
+            <Tab.Screen name="Calendar" component={CalendarScreen} />
+            <Tab.Screen name="Add Event" component={EventFormScreen} />
+            <Tab.Screen name="Notifications" component={NotificationSettingsScreen} />
+          </Tab.Navigator>
+        </SafeAreaView>
+      </NavigationContainer>
+    </PaperProvider>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
