@@ -847,7 +847,7 @@ export const CalendarScreen = () => {
                                 </Text>
                               </View>
                               <Text style={styles.time}>
-                                {event.description || `Време: ${event.time}`}
+                                {event.description || `Време: ${event.time}ч`}
                               </Text>
                             </View>
                             <View style={styles.rightContainer}>
