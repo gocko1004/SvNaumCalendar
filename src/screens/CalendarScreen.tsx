@@ -957,11 +957,11 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   monthTitle: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     color: COLORS.TEXT_LIGHT,
     textAlign: 'center',
-    padding: 16,
+    padding: 12,
   },
   eventList: {
     paddingHorizontal: 16,
@@ -1007,12 +1007,12 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   dateDay: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: COLORS.TEXT_LIGHT,
   },
   dateMonth: {
-    fontSize: 14,
+    fontSize: 12,
     color: COLORS.TEXT_LIGHT,
     textTransform: 'uppercase',
     fontWeight: '600',
@@ -1023,8 +1023,8 @@ const styles = StyleSheet.create({
     paddingRight: 12,
   },
   eventTitle: {
-    fontSize: 20,
-    marginBottom: 8,
+    fontSize: 16,
+    marginBottom: 6,
     color: COLORS.PRIMARY,
     fontWeight: '700',
     letterSpacing: 0.5,
@@ -1041,13 +1041,13 @@ const styles = StyleSheet.create({
     borderColor: COLORS.BORDER,
   },
   serviceType: {
-    fontSize: 15,
-    marginLeft: 8,
+    fontSize: 13,
+    marginLeft: 6,
     fontWeight: '600',
     color: COLORS.TEXT,
   },
   time: {
-    fontSize: 15,
+    fontSize: 13,
     color: COLORS.TERTIARY,
     fontWeight: '600',
   },
@@ -1102,8 +1102,8 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     color: COLORS.TEXT_LIGHT,
-    marginTop: 16,
-    fontSize: 18,
+    marginTop: 12,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   filterContainer: {
@@ -1153,14 +1153,14 @@ const styles = StyleSheet.create({
   },
   churchName: {
     color: COLORS.TEXT_LIGHT,
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 4,
   },
   churchAddress: {
     color: COLORS.TEXT_LIGHT,
-    fontSize: 18,
+    fontSize: 16,
     marginTop: 4,
   },
 });
