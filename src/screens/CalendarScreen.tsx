@@ -674,7 +674,7 @@ export const CalendarScreen = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
