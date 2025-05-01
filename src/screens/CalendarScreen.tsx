@@ -722,14 +722,21 @@ export const CalendarScreen = () => {
       horizontal 
       showsHorizontalScrollIndicator={false}
       style={styles.filterContainer}
+      contentContainerStyle={styles.filterContentContainer}
     >
       {Object.entries(SERVICE_TYPE_COLORS).map(([type, color]) => (
         <Chip
           key={type}
           selected={selectedServiceTypes.has(type as ServiceType)}
           onPress={() => toggleServiceTypeFilter(type as ServiceType)}
-          style={[styles.filterChip, { backgroundColor: selectedServiceTypes.has(type as ServiceType) ? color : COLORS.SURFACE }]}
-          textStyle={{ color: selectedServiceTypes.has(type as ServiceType) ? COLORS.TEXT_LIGHT : COLORS.TEXT }}
+          style={[
+            styles.filterChip,
+            { backgroundColor: selectedServiceTypes.has(type as ServiceType) ? color : COLORS.SURFACE }
+          ]}
+          textStyle={[
+            styles.filterChipText,
+            { color: selectedServiceTypes.has(type as ServiceType) ? COLORS.TEXT_LIGHT : COLORS.TEXT }
+          ]}
           icon={() => (
             <MaterialCommunityIcons
               name={SERVICE_TYPE_ICONS[type as ServiceType]}
@@ -1112,13 +1119,28 @@ const styles = StyleSheet.create({
   },
   filterContainer: {
     marginBottom: 16,
-    paddingHorizontal: 16,
+    paddingHorizontal: 8,
+  },
+  filterContentContainer: {
+    paddingHorizontal: 8,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 8,
   },
   filterChip: {
     borderWidth: 1,
     borderColor: COLORS.BORDER,
     elevation: 2,
     backgroundColor: COLORS.SURFACE,
+    marginHorizontal: 4,
+    marginVertical: 4,
+    minWidth: Platform.OS === 'web' ? 120 : 100,
+    maxWidth: Platform.OS === 'web' ? 200 : 150,
+  },
+  filterChipText: {
+    fontSize: Platform.OS === 'web' ? 14 : 12,
+    textAlign: 'center',
   },
   dialog: {
     backgroundColor: COLORS.SURFACE,
