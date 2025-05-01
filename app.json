@@ -11,30 +11,21 @@
       "resizeMode": "contain",
       "backgroundColor": "#831B26"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
     "ios": {
-      "supportsTablet": true,
       "bundleIdentifier": "com.svnaum.calendar"
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#831B26"
-      },
       "package": "com.svnaum.calendar"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "plugins": [
-      "expo-notifications"
-    ],
     "extra": {
       "eas": {
-        "projectId": "sv-naum-calendar"
+        "projectId": "714de3bf-5437-44c3-86ea-458c9c1558c3"
       }
     },
-    "owner": "gocepetrov"
+    "owner": "triengen_app",
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "webpack"
+    }
   }
-} 
+}

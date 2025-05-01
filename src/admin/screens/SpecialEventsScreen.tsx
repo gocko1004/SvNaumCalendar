@@ -20,6 +20,23 @@ import { COLORS } from '../../constants/theme';
 import { format } from 'date-fns';
 import { mk } from 'date-fns/locale';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAuzPZNsu6Hjvh2pOdW-1SWZhRco9963TQ",
+  authDomain: "svnaumkalendar.firebaseapp.com",
+  projectId: "svnaumkalendar",
+  storageBucket: "svnaumkalendar.firebasestorage.app",
+  messagingSenderId: "7954848422",
+  appId: "1:7954848422:web:f5e27ccc9e55f7ec5e3267",
+  measurementId: "G-24V411LPQX"
+};
+
+const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 type SpecialEventsScreenProps = {
   navigation: NativeStackNavigationProp<AdminStackParamList, 'SpecialEvents'>;
@@ -46,10 +63,21 @@ export const SpecialEventsScreen: React.FC<SpecialEventsScreenProps> = ({ naviga
     }
 
     const event: SpecialEvent = selectedEvent
-      ? { ...selectedEvent, ...newEvent }
+      ? { 
+          ...selectedEvent, 
+          name: newEvent.name, 
+          date: newEvent.date || new Date(), 
+          description: newEvent.description || '',
+          type: newEvent.type || 'PICNIC',
+          location: newEvent.location
+        }
       : {
           id: Date.now().toString(),
-          ...newEvent as SpecialEvent
+          name: newEvent.name,
+          date: newEvent.date || new Date(),
+          description: newEvent.description || '',
+          type: newEvent.type || 'PICNIC',
+          location: newEvent.location
         };
 
     if (selectedEvent) {
@@ -72,11 +100,7 @@ export const SpecialEventsScreen: React.FC<SpecialEventsScreenProps> = ({ naviga
   };
 
   const pickLocation = () => {
-    navigation.navigate('LocationPicker', {
-      onSelect: (location: Location) => {
-        setNewEvent({ ...newEvent, location });
-      }
-    });
+    navigation.navigate('ManageLocations', { eventId: selectedEvent?.id });
   };
 
   return (
@@ -122,7 +146,7 @@ export const SpecialEventsScreen: React.FC<SpecialEventsScreenProps> = ({ naviga
                 />
                 <IconButton
                   icon="bell"
-                  onPress={() => navigation.navigate('SendNotification')}
+                  onPress={() => navigation.navigate('AdminDashboard')}
                 />
                 <IconButton
                   icon="map-marker"

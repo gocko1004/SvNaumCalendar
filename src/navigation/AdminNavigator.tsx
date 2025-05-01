@@ -1,17 +1,20 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AdminStackParamList } from './types';
-import { AdminLoginScreen } from '../admin/screens/AdminLoginScreen';
-import { AdminDashboardScreen } from '../admin/screens/AdminDashboardScreen';
-import { SpecialEventsScreen } from '../admin/screens/SpecialEventsScreen';
-import { ManageLocationsScreen } from '../admin/screens/ManageLocationsScreen';
+import { 
+  AdminLoginScreen,
+  AdminDashboardScreen,
+  ManageCalendarScreen,
+  ManageLocationsScreen,
+  SpecialEventsScreen 
+} from '../admin/screens';
+import { EventFormScreen } from '../screens/EventFormScreen';
 import { COLORS } from '../constants/theme';
 
-const Stack = createStackNavigator<AdminStackParamList>();
+const AdminStack = createNativeStackNavigator<AdminStackParamList>();
 
 export const AdminNavigator = () => {
   return (
-    <Stack.Navigator
+    <AdminStack.Navigator
       screenOptions={{
         headerStyle: {
           backgroundColor: COLORS.PRIMARY,
@@ -22,26 +25,36 @@ export const AdminNavigator = () => {
         },
       }}
     >
-      <Stack.Screen 
-        name="AdminLogin" 
+      <AdminStack.Screen
+        name="AdminLogin"
         component={AdminLoginScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen 
-        name="AdminDashboard" 
+      <AdminStack.Screen
+        name="AdminDashboard"
         component={AdminDashboardScreen}
-        options={{ title: 'Администраторски Панел' }}
+        options={{ title: 'Админ Панел' }}
       />
-      <Stack.Screen 
-        name="SpecialEvents" 
-        component={SpecialEventsScreen}
-        options={{ title: 'Специјални Настани' }}
+      <AdminStack.Screen
+        name="ManageCalendar"
+        component={ManageCalendarScreen}
+        options={{ title: 'Годишен Календар' }}
       />
-      <Stack.Screen 
-        name="ManageLocations" 
+      <AdminStack.Screen
+        name="AddEvent"
+        component={EventFormScreen}
+        options={{ title: 'Додади Настан' }}
+      />
+      <AdminStack.Screen
+        name="ManageLocations"
         component={ManageLocationsScreen}
         options={{ title: 'Локации' }}
       />
-    </Stack.Navigator>
+      <AdminStack.Screen
+        name="SpecialEvents"
+        component={SpecialEventsScreen}
+        options={{ title: 'Специјални Настани' }}
+      />
+    </AdminStack.Navigator>
   );
 }; 

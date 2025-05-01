@@ -219,6 +219,43 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
     time: '09:00',
     description: '09:00 - 13:00'
   },
+  // June events
+  {
+    date: new Date(2025, 5, 1), // June 1
+    name: 'Неделна Литургија',
+    time: '09:00',
+    serviceType: 'LITURGY',
+  },
+  {
+    date: new Date(2025, 5, 7), // June 7
+    name: 'ЗАДУШНИЦА – Литургија',
+    time: '09:00',
+    serviceType: 'LITURGY',
+  },
+  {
+    date: new Date(2025, 5, 8), // June 8
+    name: 'Слегување на Св. Дух – Неделна Литургија',
+    time: '09:00',
+    serviceType: 'LITURGY',
+  },
+  {
+    date: new Date(2025, 5, 15), // June 15
+    name: 'Неделна Литургија',
+    time: '09:00',
+    serviceType: 'LITURGY',
+  },
+  {
+    date: new Date(2025, 5, 22), // June 22
+    name: 'Неделна Литургија',
+    time: '09:00',
+    serviceType: 'LITURGY',
+  },
+  {
+    date: new Date(2025, 5, 29), // June 29
+    name: 'Црквата е отворена',
+    time: '09:00 – 13:00',
+    serviceType: 'CHURCH_OPEN',
+  },
   // July
   {
     date: new Date(2025, 7-1, 2),

@@ -14,16 +14,12 @@ export type MainTabParamList = {
 export type AdminStackParamList = {
   AdminLogin: undefined;
   AdminDashboard: undefined;
-  ManageEvents: undefined;
-  ManageNotifications: undefined;
-  ManageUsers: undefined;
-  Settings: undefined;
-  CreateEvent: undefined;
-  SendNotification: undefined;
+  ManageCalendar: undefined;
   ManageLocations: {
     eventId?: string;
   };
   SpecialEvents: undefined;
+  AddEvent: undefined;
   EditEvent: {
     eventId: string;
   };

@@ -1,10 +1,24 @@
+import {
+  FACEBOOK_APP_ID,
+  FACEBOOK_APP_SECRET,
+  FACEBOOK_ACCESS_TOKEN
+} from '@env';
+
 export const CONFIG = {
   APP_NAME: 'Sv Naum Calendar',
   VERSION: '1.0.0',
   
   // API Configuration
-  API_URL: process.env.API_URL || 'https://api.example.com',
-  API_TIMEOUT: 10000, // 10 seconds
+  API: {
+    BASE_URL: 'https://mpc-triengen.ch/api',
+    ENDPOINTS: {
+      POSTS: '/posts',
+      EVENTS: '/events',
+      NOTIFICATIONS: '/notifications',
+    },
+    AUTH_TOKEN: 'your-api-token',
+    TIMEOUT: 10000, // 10 seconds
+  },
   
   // Storage Keys
   STORAGE_KEYS: {
@@ -13,10 +27,29 @@ export const CONFIG = {
     NOTIFICATIONS: '@notifications_settings',
   },
   
+  // Social Media URLs and Configuration
+  SOCIAL_MEDIA: {
+    FACEBOOK_GROUP: 'https://www.facebook.com/groups/Mpctriengen/',
+    WEBSITE: 'https://mpc-triengen.ch',
+    FACEBOOK: {
+      APP_ID: FACEBOOK_APP_ID || '',
+      APP_SECRET: FACEBOOK_APP_SECRET || '',
+      GROUP_ID: '', // Will be configured later
+      ACCESS_TOKEN: FACEBOOK_ACCESS_TOKEN || '',
+    },
+    AUTO_POST: {
+      ENABLED: false, // Disabled for now
+      PLATFORMS: {
+        FACEBOOK: false, // Disabled for now
+        WEBSITE: false,  // Disabled for now
+      },
+    },
+  },
+  
   // Theme Colors
   COLORS: {
-    PRIMARY: '#007AFF',
-    SECONDARY: '#5856D6',
+    PRIMARY: '#831B26',
+    SECONDARY: '#F2A333',
     SUCCESS: '#34C759',
     DANGER: '#FF3B30',
     WARNING: '#FF9500',
@@ -43,6 +76,6 @@ export const CONFIG = {
   FEATURES: {
     ENABLE_PUSH_NOTIFICATIONS: true,
     ENABLE_CALENDAR_SYNC: true,
-    ENABLE_SOCIAL_SHARING: true,
+    ENABLE_SOCIAL_SHARING: false, // Disabled for now
   },
 }; 

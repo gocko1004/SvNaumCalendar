@@ -43,10 +43,17 @@ export const ManageLocationsScreen: React.FC<ManageLocationsScreenProps> = ({ na
     }
 
     const location: Location = selectedLocation
-      ? { ...selectedLocation, ...newLocation }
+      ? { 
+          ...selectedLocation, 
+          name: newLocation.name, 
+          address: newLocation.address, 
+          coordinates: newLocation.coordinates || { latitude: 0, longitude: 0 }
+        }
       : {
           id: Date.now().toString(),
-          ...newLocation as Location
+          name: newLocation.name,
+          address: newLocation.address,
+          coordinates: newLocation.coordinates || { latitude: 0, longitude: 0 }
         };
 
     if (selectedLocation) {
