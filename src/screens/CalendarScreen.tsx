@@ -814,53 +814,55 @@ export const CalendarScreen = () => {
                       ]}
                     >
                       <Card.Content>
-                        <View style={styles.cardHeader}>
-                          <View style={styles.dateContainer}>
-                            <Text style={styles.dateDay}>
-                              {format(event.date, 'dd', { locale: mk })}
-                            </Text>
-                            <Text style={styles.dateMonth}>
-                              {format(event.date, 'MMM', { locale: mk })}
-                            </Text>
-                          </View>
-                          <View style={styles.eventInfo}>
-                            <Title style={styles.eventTitle}>{event.name}</Title>
-                            <View style={styles.serviceTypeContainer}>
-                              <MaterialCommunityIcons 
-                                name={SERVICE_TYPE_ICONS[event.serviceType]} 
-                                size={16} 
-                                color={SERVICE_TYPE_COLORS[event.serviceType]} 
-                              />
-                              <Text style={[
-                                styles.serviceType,
-                                { color: SERVICE_TYPE_COLORS[event.serviceType] }
-                              ]}>
-                                {getServiceTypeLabel(event.serviceType)}
+                        <View style={styles.cardContent}>
+                          <Title style={styles.eventTitle}>{event.name}</Title>
+                          <View style={styles.cardDetails}>
+                            <View style={styles.dateContainer}>
+                              <Text style={styles.dateDay}>
+                                {format(event.date, 'dd', { locale: mk })}
+                              </Text>
+                              <Text style={styles.dateMonth}>
+                                {format(event.date, 'MMM', { locale: mk })}
                               </Text>
                             </View>
-                            <Text style={styles.time}>
-                              {event.description || `Време: ${event.time}`}
-                            </Text>
-                          </View>
-                          <View style={styles.rightContainer}>
-                            <View style={styles.imageContainer}>
-                              {(() => {
-                                const eventImage = getEventImage(event);
-                                return eventImage ? (
-                                  <Image 
-                                    source={eventImage}
-                                    style={styles.eventImage}
-                                    resizeMode="cover"
-                                  />
-                                ) : (
-                                  <MaterialCommunityIcons 
-                                    name={SERVICE_TYPE_ICONS[event.serviceType]}
-                                    size={40}
-                                    color={SERVICE_TYPE_COLORS[event.serviceType]}
-                                    style={styles.fallbackIcon}
-                                  />
-                                );
-                              })()}
+                            <View style={styles.eventInfo}>
+                              <View style={styles.serviceTypeContainer}>
+                                <MaterialCommunityIcons 
+                                  name={SERVICE_TYPE_ICONS[event.serviceType]} 
+                                  size={16} 
+                                  color={SERVICE_TYPE_COLORS[event.serviceType]} 
+                                />
+                                <Text style={[
+                                  styles.serviceType,
+                                  { color: SERVICE_TYPE_COLORS[event.serviceType] }
+                                ]}>
+                                  {getServiceTypeLabel(event.serviceType)}
+                                </Text>
+                              </View>
+                              <Text style={styles.time}>
+                                {event.description || `Време: ${event.time}`}
+                              </Text>
+                            </View>
+                            <View style={styles.rightContainer}>
+                              <View style={styles.imageContainer}>
+                                {(() => {
+                                  const eventImage = getEventImage(event);
+                                  return eventImage ? (
+                                    <Image 
+                                      source={eventImage}
+                                      style={styles.eventImage}
+                                      resizeMode="cover"
+                                    />
+                                  ) : (
+                                    <MaterialCommunityIcons 
+                                      name={SERVICE_TYPE_ICONS[event.serviceType]}
+                                      size={40}
+                                      color={SERVICE_TYPE_COLORS[event.serviceType]}
+                                      style={styles.fallbackIcon}
+                                    />
+                                  );
+                                })()}
+                              </View>
                             </View>
                           </View>
                         </View>
@@ -984,12 +986,21 @@ const styles = StyleSheet.create({
     elevation: 2,
     borderLeftWidth: 4, // Thicker left border for service type
   },
-  cardHeader: {
+  cardContent: {
+    flex: 1,
+  },
+  cardDetails: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 12,
-    backgroundColor: 'rgba(248, 244, 233, 0.7)', // Slightly lighter parchment
+    marginTop: 12,
+  },
+  eventTitle: {
+    fontSize: 16,
+    color: COLORS.PRIMARY,
+    fontWeight: '700',
+    letterSpacing: 0.5,
+    marginBottom: 8,
   },
   dateContainer: {
     alignItems: 'center',
@@ -999,7 +1010,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 15,
     borderWidth: 2,
-    borderColor: '#D4AF37', // Byzantine gold
+    borderColor: '#D4AF37',
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
@@ -1021,13 +1032,6 @@ const styles = StyleSheet.create({
   eventInfo: {
     flex: 1,
     paddingRight: 12,
-  },
-  eventTitle: {
-    fontSize: 16,
-    marginBottom: 6,
-    color: COLORS.PRIMARY,
-    fontWeight: '700',
-    letterSpacing: 0.5,
   },
   serviceTypeContainer: {
     flexDirection: 'row',
