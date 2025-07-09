@@ -74,7 +74,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 2-1, 16),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -162,7 +162,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 4-1, 27),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -189,7 +189,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 5-1, 18),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -252,7 +252,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 5, 29), // June 29
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     time: '09:00 – 13:00',
     serviceType: 'CHURCH_OPEN',
   },
@@ -284,21 +284,21 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 7-1, 13),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
   },
   {
     date: new Date(2025, 7-1, 20),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
   },
   {
     date: new Date(2025, 7-1, 27),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -306,21 +306,21 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   // August
   {
     date: new Date(2025, 8-1, 3),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
   },
   {
     date: new Date(2025, 8-1, 10),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
   },
   {
     date: new Date(2025, 8-1, 17),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -378,7 +378,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 9-1, 14),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -404,7 +404,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   // October
   {
     date: new Date(2025, 10-1, 5),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -461,7 +461,7 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 11-1, 16),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -532,14 +532,14 @@ export const CHURCH_EVENTS_2025: ChurchEvent[] = [
   },
   {
     date: new Date(2025, 12-1, 21),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
   },
   {
     date: new Date(2025, 12-1, 28),
-    name: 'Црквата е отворена',
+    name: 'Црквата е отворена / без свештеник',
     serviceType: 'CHURCH_OPEN',
     time: '09:00',
     description: '09:00 - 13:00'
@@ -579,7 +579,7 @@ export const getServiceTypeLabel = (type: ServiceType): string => {
     case 'EVENING_SERVICE':
       return 'Вечерна Богослужба';
     case 'CHURCH_OPEN':
-      return 'Црквата е отворена';
+      return 'Црквата е отворена / без свештеник';
     case 'PICNIC':
       return 'Пикник';
     default:

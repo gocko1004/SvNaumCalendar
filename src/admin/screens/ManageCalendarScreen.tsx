@@ -123,7 +123,7 @@ export const ManageCalendarScreen: React.FC<ManageCalendarScreenProps> = ({ navi
       case 'EVENING_SERVICE':
         return 'Вечерна Богослужба';
       case 'CHURCH_OPEN':
-        return 'Црквата е отворена';
+        return 'Црквата е отворена / без свештеник';
       case 'PICNIC':
         return 'Пикник';
       default:
@@ -275,7 +275,7 @@ export const ManageCalendarScreen: React.FC<ManageCalendarScreenProps> = ({ navi
                   setEditedEvent({ ...editedEvent, serviceType: 'CHURCH_OPEN' });
                   setServiceTypeMenuVisible(false);
                 }}
-                title="Црквата е отворена"
+                title="Црквата е отворена / без свештеник"
               />
               <Menu.Item
                 onPress={() => {
